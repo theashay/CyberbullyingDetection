@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-5">
+    <h1 class="text-center">About the Dataset</h1>
+    <hr>
+    <div class="row mt-4">
+        <div class="col-md-6">
+            <h3>Dataset</h3>
+            <p>
+                You can find the source of the dataset here.
+            </p>
+            <p>
+                Dataset consists of two columns: <code>Comment</code> and <code>Label</code>. This dataset contains 18,581 comments, and 
+                <code>Label</code> is labeled according to the class of cyberbullying:
+                <strong>Age</strong>, <strong>Ethnicity</strong>, <strong>Gender</strong>, <strong>Religion</strong>, 
+                <strong>Other types of cyberbullying</strong>, and <strong>Not cyberbullying</strong>.
+            </p>
+            <p>
+                The data has been balanced to contain approximately 11,000 comments of label:1 and 7,000 comments of label:0. Preprocessed the data from the Youtube comments, these Comments either describe a Cyberbullying event or Not-Cyberbullying.
+            </p>
+        </div>
+        <div class="col-md-6">
+            <h3 class="text-center">Dataset Sample</h3>
+            <img src="{{ url_for('static', filename='images/dataset_sample.jpg') }}" class="img-fluid" alt="Dataset Sample">
+        </div>
+    </div>
+    <div class="row mt-5">
+        <div class="col-md-12">
+            <h3>Cyberbullying Type Classes Description</h3>
+            <ul>
+                <li><strong>Age:</strong> This class refers to instances of cyberbullying that revolve around someone's age. It could involve making fun of someone’s age or using age-related insults to hurt them.</li>
+                <li><strong>Ethnicity:</strong> This class refers to tweets that involve bad words targeted at someone's ethnicity.</li>
+                <li><strong>Gender:</strong> Involves attacking someone based on their gender.</li>
+                <li><strong>Religion:</strong> Cyberbullying that is targeted at a person's religion or beliefs.</li>
+                <li><strong>Other Types of Cyberbullying:</strong> This class covers any form of online harassment that doesn’t fit the defined categories but still causes harm and distress.</li>
+                <li><strong>Not Cyberbullying:</strong> Situations where the content or behavior does not meet the criteria for cyberbullying.</li>
+            </ul>
+        </div>
+    </div>
+    <div class="row mt-5">
+        <div class="col-md-6">
+            <h3 class="text-center">Percentage Label Distribution</h3>
+            <img src="{{ url_for('static', filename='images/pie_chart.jpg') }}" class="img-fluid" alt="Pie Chart">
+        </div>
+        <div class="col-md-6">
+            <h3 class="text-center">Count Label Distribution</h3>
+            <img src="{{ url_for('static', filename='images/bar_chart.jpg') }}" class="img-fluid" alt="Bar Chart">
+        </div>
+    </div>
+</div>
+{% endblock %}

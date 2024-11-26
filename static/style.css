@@ -1,0 +1,131 @@
+/* General Reset */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: white;
+    margin: 0;
+    padding: 0;
+}
+
+/* Title Styling */
+h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: black;
+}
+
+/* Icon Image Styling */
+.top-right-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin: 0;
+}
+
+/* Container Styling */
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 20px;
+}
+
+/* Text Alignment */
+.text-start {
+    text-align: left;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* Form Styling */
+textarea.no-gap {
+    width: 100%;
+    margin-top: 0; /* Remove gap */
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+    resize: none;
+}
+
+.btn {
+    display: block;
+    width: 100%;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    background-color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+/* Remove the green background color on button click */
+.btn:focus, .btn:active {
+    outline: none;
+    box-shadow: none;
+    background-color: black !important; 
+}
+
+
+.btn:hover {
+    background-color: black;
+}
+
+/* Result Styling */
+.result {
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-top: 10px;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.bullying {
+    background-color: #dc3545; /* Red */
+}
+
+.non-bullying {
+    background-color: #28a745; /* Green */
+}
+.card {
+    margin-bottom: 30px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-img-top {
+    max-height: 200px;
+    object-fit: contain;
+    padding: 10px;
+}
+
+.card-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.card-text {
+    font-size: 14px;
+    color: #555;
+    text-align: justify;
+}
+.predict-button {
+    background-color:black; /* Blue background */
+    color: white; /* White text */
+    padding: 10px 20px; /* Padding */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded corners */
+    font-size: 16px; /* Font size */
+    cursor: pointer; /* Change cursor on hover */
+    transition: background-color 0.3s ease; /* Smooth transition for hover */
+}
+
+.predict-button:hover {
+    background-color: black; /* Darker blue on hover */
+}
+

@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-5">
+    <h1 class="text-center mb-5">Algorithms Used to Build The Model</h1>
+    <div class="row text-center">
+        <!-- Logistic Regression -->
+        <div class="col-md-4">
+            <div class="card">
+                <img src="{{ url_for('static', filename='images/logistic_regression.png') }}" class="card-img-top" alt="Logistic Regression">
+                <div class="card-body">
+                    <h5 class="card-title">LOGISTIC REGRESSION</h5>
+                    <p class="card-text">
+                        Logistic Regression is commonly used for cyberbullying comment detection by modeling the probability that a comment belongs to a specific class (e.g., "cyberbullying" or "non-cyberbullying"). It combines features like words or phrases and applies a logistic function to output a probability. While simple and interpretable, it may struggle with complex, non-linear relationships in the data.
+                    </p>
+                    {% if logistic_prediction %}
+                        <p class="text-success"><strong>Prediction: {{ logistic_prediction }}</strong></p>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        
+        <!-- Naive Bayes -->
+        <div class="col-md-4">
+            <div class="card">
+                <img src="{{ url_for('static', filename='images/naivebayes_classifier.png') }}" class="card-img-top" alt="Naive Bayes">
+                <div class="card-body">
+                    <h5 class="card-title">Naive Bayes</h5>
+                    <p class="card-text">
+                        Multinomial Naive Bayes is used to classify YouTube comments as cyberbullying or non-cyberbullying. It treats words as features and assumes their frequencies follow a multinomial distribution. The model calculates the likelihood of a comment belonging to each class based on word occurrences, effectively detecting harmful or non-harmful language.
+                    </p>
+                    {% if nb_prediction %}
+                        <p class="text-success"><strong>Prediction: {{ nb_prediction }}</strong></p>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        
+        <!-- Random Forest -->
+        <div class="col-md-4">
+            <div class="card">
+                <img src="{{ url_for('static', filename='images/randomforest_classifier.jpg') }}" class="card-img-top" alt="Random Forest">
+                <div class="card-body">
+                    <h5 class="card-title">RANDOM FOREST CLASSIFIER</h5>
+                    <p class="card-text">
+                        Random Forest Classifier is an ensemble method that builds multiple decision trees and averages their results. It captures non-linear relationships and interactions between features, making it effective for detecting cyberbullying in diverse, complex datasets. Although powerful, random forests are computationally intensive and less interpretable than simpler models.
+                    </p>
+                    {% if rf_prediction %}
+                        <p class="text-success"><strong>Prediction: {{ rf_prediction }}</strong></p>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

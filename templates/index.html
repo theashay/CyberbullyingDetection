@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row">
+        <!-- Description (Left) -->
+        <div class="col-md-8">
+            <h1>Cyberbullying Detection on Social Networks</h1>
+            <p class="text-start">
+                Social media platforms have ingrained themselves into our lives, providing a forum for connection, 
+                expression, and communication. However, this digital environment also presents challenges, 
+                one of which is the rise of cyberbullying—a form of online harassment and hostility. 
+                The growing use of social media has increased the impact of cyberbullying, which affects people of all ages, 
+                genders, and races.
+            </p>
+            <p class="text-start">
+                The "Cyberbullying Detection" project leverages machine learning models to tackle this pressing issue, 
+                aiming to identify harmful content effectively. With state-of-the-art algorithms, this system categorizes 
+                content to recognize and mitigate cyberbullying on social networks.
+            </p>
+        </div>
+
+        <!-- Icon Image (Right) -->
+        <div class="col-md-4 text-end">
+            <img src="{{ url_for('static', filename='images/icon.png') }}" alt="Cyberbullying Detection" class="top-right-image">
+        </div>
+    </div>
+
+    <!-- Textarea Form -->
+    <div class="row mt-0">
+        <div class="col-md-12">
+            <form method="POST" action="/" class="text-center">
+                <textarea 
+                    name="text" 
+                    class="form-control no-gap" 
+                    placeholder="Enter text to analyze..." 
+                    rows="2">{{ input_text or '' }}</textarea>
+                
+                <!-- Buttons Side by Side -->
+                <div class="d-flex justify-content-center mt-3">
+                    <button type="submit" class="btn btn-success mx-2">Predict</button>
+                    <button type="submit" class="btn btn-secondary mx-2" formaction="{{ url_for('clear') }}">Clear</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Prediction Result -->
+    {% if prediction %}
+    <div class="result text-center {% if prediction == 'Cyberbullying' %}bullying{% else %}non-bullying{% endif %} mt-3">
+        {{ prediction }}
+    </div>
+    {% endif %}
+    {% if input_text %}
+      <form method="GET" action="/models">
+        <button type="submit" class="predict-button">Predict Other Models</button>
+      </form>
+    {% endif %}
+</div>
+{% endblock %}
